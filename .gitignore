@@ -16,3 +16,4 @@ venv/
 
 # GitHub App private keys
 keys/
+app/api/__pycache__/main.cpython-311.pyc
