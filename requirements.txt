@@ -1,0 +1,33 @@
+# PRAudit — requirements.txt
+# Organized by phase so you know what's driving each dependency.
+
+# --- Phase 1: Repository Discovery ---
+pathspec>=0.12.0            # .gitignore-correct file filtering (gitwildmatch syntax)
+
+# --- Phase 2/3: Parsing + Semantic Chunking ---
+tree-sitter>=0.23.0
+tree-sitter-python>=0.23.0
+tree-sitter-javascript>=0.23.0
+
+# --- Repository Intelligence: Embedding + Vector Search ---
+sentence-transformers>=3.0.0   # code-aware embedding model, runs locally
+qdrant-client>=1.12.0            # vector database client
+
+# --- AI Layer (Phase 17 — needed once you start writing agents) ---
+anthropic>=0.40.0
+langgraph>=0.2.0
+
+# --- Backend APIs (Phase 15) ---
+fastapi>=0.115.0
+uvicorn>=0.32.0
+
+# --- Storage Layer (Phase 23 in the full plan) ---
+psycopg2-binary>=2.9.0        # Postgres
+redis>=5.0.0
+
+# --- Config / general ---
+python-dotenv>=1.0.0           # loads .env into environment variables
+pydantic>=2.9.0                  # structured data validation, used by FastAPI
+
+# --- Testing (Phase 25) ---
+pytest>=8.0.0
